@@ -2,18 +2,32 @@
 <header class="site-header">
   <div class="container bar">
     <a class="brand" href="{=site.url}">
-      <!-- BUILDER: replace with the logo, or leave a wordmark if there is none.
-           Two images, one per theme, and main.css swaps them:
-             <img class="logo-light" src="{=site.url('images/logo.png')}" alt="Action Sweetwater Creek Inc.">
-             <img class="logo-dark" src="{=site.url('images/logo-dark.png')}" alt="" aria-hidden="true"> -->
-      <span class="brand-name">Action Sweetwater Creek Inc.</span>
+      <img class="logo-light" src="{=site.url('images/logo.png')}" alt="Sweetwater Creek Nature Reserve" width="400" height="89">
+      <img class="logo-dark" src="{=site.url('images/logo-dark.png')}" alt="" aria-hidden="true" width="400" height="89">
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle menu">
     <label for="nav-toggle" class="nav-toggle"><span></span></label>
     <nav class="site-nav" aria-label="Main navigation">
       <ul>
-        <!-- BUILDER: one <li> per page, mirroring the original site's navigation -->
-        <li><a href="{=site.url}">Home</a></li>
+        <li><a href="{=site.url('environment')}">Sweetwater Environment</a>
+          <ul>
+            <li><a href="{=site.url('flora')}">Flora</a></li>
+            <li><a href="{=site.url('fauna')}">Fauna</a></li>
+            <li><a href="{=site.url('walks')}">Walks</a></li>
+            <li><a href="{=site.url('history')}">History</a></li>
+          </ul>
+        </li>
+        <li><a href="{=site.url('get-involved')}">Get Involved</a>
+          <ul>
+            <li><a href="{=site.url('volunteer-sessions')}">Volunteer Sessions</a></li>
+            <li><a href="{=site.url('living-classroom')}">Living Classroom</a></li>
+            <li><a href="{=site.url('become-a-member')}">Become a Member</a></li>
+            <li><a href="{=site.url('support-us')}">Support Us (Donations)</a></li>
+          </ul>
+        </li>
+        <li><a href="{=site.url('news')}">News</a></li>
+        <li><a href="{=site.url('contact')}">Contact Us</a></li>
+        <li><a class="nav-cta" href="{=site.url('support-us')}">Donate</a></li>
       </ul>
     </nav>
   </div>

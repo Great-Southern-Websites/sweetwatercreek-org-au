@@ -1,35 +1,60 @@
 {@io.quarkiverse.roq.frontmatter.runtime.model.Site site}
-<!-- Structured data for search engines (schema.org). BUILDER: fill every field
-     from the business's own details; delete keys you have no real value for.
-     Keep it accurate when contact details, hours or locations change. -->
+<!-- Structured data for search engines (schema.org): the volunteer group and
+     the reserve it cares for. Keep it accurate when contact details change. -->
 <script type="application/ld+json">
 {|{
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "|}{=site.url.absolute}{|#business",
-  "name": "Action Sweetwater Creek Inc.",
-  "url": "|}{=site.url.absolute}{|",
-  "logo": "|}{=site.url('images/logo.png').absolute}{|",
-  "image": "|}{=site.url('images/logo.png').absolute}{|",
-  "description": "BUILDER: one sentence, the same as the home page description.",
-  "telephone": "+61 3 0000 0000",
-  "email": "hello@example.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "1 Example Street",
-    "addressLocality": "Suburb",
-    "addressRegion": "VIC",
-    "postalCode": "3000",
-    "addressCountry": "AU"
-  },
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "17:00" }
-  ],
-  "sameAs": [],
-  "potentialAction": {
-    "@type": "ReserveAction",
-    "name": "Book",
-    "target": "|}{=site.url('contact').absolute}{|"
-  }
+  "@graph": [
+    {
+      "@type": "NGO",
+      "@id": "|}{=site.url.absolute}{|#organisation",
+      "name": "Action Sweetwater Creek Inc.",
+      "alternateName": "ASC Inc.",
+      "url": "|}{=site.url.absolute}{|",
+      "logo": "|}{=site.url('images/logo.png').absolute}{|",
+      "image": "|}{=site.url('images/creek-rock-pools.jpg').absolute}{|",
+      "description": "Action Sweetwater Creek Inc. is a volunteer group of about 250 local residents who care for Sweetwater Creek Nature Reserve in Frankston South, Victoria, with weekly working bees, school sessions and guided walks.",
+      "telephone": "+61412844112",
+      "email": "sweetwater.action@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "postOfficeBoxNumber": "PO Box 5294",
+        "addressLocality": "Frankston South",
+        "addressRegion": "VIC",
+        "postalCode": "3199",
+        "addressCountry": "AU"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Frankston South, Victoria"
+      },
+      "sameAs": [
+        "https://www.facebook.com/Sweetwater-Creek-140498369343050"
+      ],
+      "potentialAction": {
+        "@type": "JoinAction",
+        "name": "Become a member",
+        "target": "|}{=site.url('become-a-member').absolute}{|"
+      }
+    },
+    {
+      "@type": "Park",
+      "@id": "|}{=site.url.absolute}{|#reserve",
+      "name": "Sweetwater Creek Nature Reserve",
+      "url": "|}{=site.url('walks').absolute}{|",
+      "image": "|}{=site.url('images/creek-rock-pools.jpg').absolute}{|",
+      "description": "Thirteen hectares of remnant bushland along the lower section of Sweetwater Creek in Frankston South, protected for its flora, fauna, geological and cultural heritage values, with walking tracks, boardwalks and bridges.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Frankston South",
+        "addressRegion": "VIC",
+        "postalCode": "3199",
+        "addressCountry": "AU"
+      },
+      "isAccessibleForFree": true,
+      "publicAccess": true,
+      "maintainer": { "@id": "|}{=site.url.absolute}{|#organisation" }
+    }
+  ]
 }|}
 </script>
