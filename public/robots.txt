@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://live.greatsouthern.website/sweetwatercreek-org-au/sitemap.xml
