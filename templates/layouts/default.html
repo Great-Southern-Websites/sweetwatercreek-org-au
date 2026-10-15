@@ -32,6 +32,15 @@
   {#bundle key="lightbox" tag="script" /}
   {#include partials/structured-data /}
   {#insert head /}
+  {! Only inside the Great Southern Websites app's preview frame: lets the owner select part of this page
+     for a change request. Visitors never load anything. Leave it in. !}
+  <script>{|
+    if (window.top !== window.self) (function () {
+      var s = document.createElement('script');
+      s.src = 'https://www.greatsouthern.website/js/site-select.js'; s.async = true;
+      document.head.appendChild(s);
+    })();
+  |}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
